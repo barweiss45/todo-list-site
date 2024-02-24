@@ -1,5 +1,5 @@
 from .task_db import TaskModel
-from .task import Task
+from .response_models import Task
 
 __all__ = [
     Task,
