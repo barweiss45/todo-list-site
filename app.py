@@ -1,12 +1,17 @@
-from flask import Flask, jsonify, request, render_template
 import os
+
 from dotenv import load_dotenv
+from flask import Flask, jsonify, render_template, request
+from flask_sqlalchemy import SQLAlchemy
+from models import TaskModel, Task
+
 
 load_dotenv()
 
-SQLALCHEMY_DATABASE_URI = os.getenv("SQLALCHEMY_DATABASE_URI")
-
 app = Flask(__name__)
+
+app.config['SQLALCHEMY_DATABASE_URI']  = os.getenv("SQLALCHEMY_DATABASE_URI")
+db = SQLAlchemy(app)
 
 
 @app.route("/")
