@@ -1,5 +1,10 @@
 from flask import Flask, jsonify, request, render_template
-import sqlite3
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+SQLALCHEMY_DATABASE_URI = os.getenv("SQLALCHEMY_DATABASE_URI")
 
 app = Flask(__name__)
 
