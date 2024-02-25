@@ -1,8 +1,9 @@
 #! /usr/bin/env python3
 
-from . import task_blueprint
-from flask import render_template, request, redirect, url_for, jsonify
+from flask import jsonify, redirect, render_template, request, url_for
+
 from .. import db
+from . import task_blueprint
 
 
 @task_blueprint.route('/')
