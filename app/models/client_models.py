@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 # from typing_extensions import Annotated
 
 
-class ClientRequest(BaseModel):
+class CreateTask(BaseModel):
     task: str = Field(..., example="Buy groceries", min_length=1)
     completed: bool = Field(default=False, example=False)
     create_date: str = Field(default=None)

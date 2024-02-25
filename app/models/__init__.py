@@ -1,7 +1,7 @@
 from .task import TaskModel
-# from .response_models import Task
+from .client_models import CreateTask
 
 __all__ = [
-    # Task,
+    CreateTask,
     TaskModel,
 ]
