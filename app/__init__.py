@@ -21,7 +21,8 @@ def create_app():
     db.init_app(app)
 
     with app.app_context():
-        from app.models import TaskModel  # Import models here to register them with SQLAlchemy
+        from app.models import \
+            TaskModel  # Import models here to register them with SQLAlchemy
 
         # Import Blueprints and register them
         from .views import task_blueprint
