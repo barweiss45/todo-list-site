@@ -5,6 +5,7 @@ from app.models import TaskModel, CreateTask
 
 from .. import db
 from . import task_blueprint
+from instance.config import logger
 
 
 @task_blueprint.route('/')
@@ -19,8 +20,10 @@ def create_task():
         new_task = TaskModel(task=task_data.task, completed=task_data.completed)  # Create an SQLAlchemy model instance
         db.session.add(new_task)
         db.session.commit()
+        logger.info("/create_task - R_IP: %s",  request.remote_addr)
         return jsonify({"success": True, "task": task_data.model_dump()}), 201
     except ValueError as e:
+        logger.error(e)
         return jsonify({"error": str(e)}), 400
 
 # Add more routes as needed

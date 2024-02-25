@@ -2,13 +2,10 @@
 Factory Function for Flask Application
 """
 
-import os
-
-from dotenv import load_dotenv
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
-load_dotenv()
+from instance.config import SQLALCHEMY_DATABASE_URI
 
 db = SQLAlchemy()
 
@@ -16,7 +13,7 @@ db = SQLAlchemy()
 def create_app():
     """Factory Function for Flask Application"""
     app = Flask(__name__)
-    app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("SQLALCHEMY_DATABASE_URI")
+    app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
 
     db.init_app(app)
 
@@ -26,6 +23,7 @@ def create_app():
 
         # Import Blueprints and register them
         from .views import task_blueprint
+        db.create_all()
         app.register_blueprint(task_blueprint)
 
     return app
