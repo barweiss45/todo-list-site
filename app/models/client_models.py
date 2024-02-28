@@ -18,7 +18,7 @@ class CreateTask(BaseModel):
 class CompleteTask(BaseModel):
     task: str = Field(..., example="Buy groceries", min_length=1)
     completed: bool = Field(default=False, example=False)
-    complete_data: str = Field(default=None)
+    complete_date: str = Field(default=None)
 
 
 class ClientResponse:

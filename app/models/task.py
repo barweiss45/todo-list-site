@@ -8,11 +8,11 @@ class TaskModel(db.Model):
     TaskModel - Database Schema
 
     Example:
-{
-"id": 1,
-"task": "Complete this todo application.",
-"completed": False
-}
+    {
+        "id": 1,
+        "task": "Complete this todo application.",
+        "completed": False
+    }
     """
     id = db.Column(db.Integer, primary_key=True)
     task = db.Column(db.String, nullable=False)
