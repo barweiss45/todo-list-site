@@ -5,7 +5,7 @@ Factory Function for Flask Application
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
-from instance.config import SQLALCHEMY_DATABASE_URI
+from app.config import SQLALCHEMY_DATABASE_URI
 
 db = SQLAlchemy()
 

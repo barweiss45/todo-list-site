@@ -1,6 +1,5 @@
-from .client_models import (ClientResponse, CompleteTask, CreateTask,
-                            ValidationError)
-from .task import TaskModel
+from .client_model import (ClientResponse, CompleteTask, CreateTask, ValidationError)
+from .task_model import TaskModel
 
 __all__ = [
     ClientResponse,

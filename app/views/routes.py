@@ -1,11 +1,13 @@
 #! /usr/bin/env python3
 
-from flask import jsonify, redirect, render_template, request, abort
-from app.models import TaskModel, CreateTask, CompleteTask, ValidationError, ClientResponse
+from flask import abort, jsonify, render_template, request
+
+from app.config import logger
+from app.models import (ClientResponse, CompleteTask, CreateTask, TaskModel,
+                        ValidationError)
 
 from .. import db
 from . import task_blueprint
-from instance.config import logger
 
 
 @task_blueprint.route('/')
