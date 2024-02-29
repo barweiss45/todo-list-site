@@ -1,0 +1,10 @@
+/* Add your CSS styling here */
+body {
+    font-family: Arial, sans-serif;
+}
+.task-list {
+    margin-top: 20px;
+}
+.task-item {
+    margin-bottom: 10px;
+}
