@@ -27,7 +27,7 @@ def get_task(id: int) -> ClientResponse:
     return jsonify({"success": True, "message": task_model}), 200
 
 
-@task_blueprint.route('/tasks/all', methods=["GET"])
+@task_blueprint.route('/tasks', methods=["GET"])
 def get_tasks() -> ClientResponse:
     """Get all tasks"""
     tasks = TaskModel.query.all()

@@ -1,19 +1,27 @@
-document
-.getElementById("taskForm")
-.addEventListener("submit", function (e) {
-  e.preventDefault();
+document.getElementById("taskForm").addEventListener(
+  "submit", function (e) {e.preventDefault();
   const taskInput = document.getElementById("taskInput");
   const task = taskInput.value.trim();
   if (task) {
     // Implement the function to add tasks here
     addTask(task);
     taskInput.value = ""; // Clear input after adding
-  }
-});
+}
+}
+);
 
 function addTask(task) {
 // Here you will make a POST request to your Flask backend to add a new task
 // After adding the task, you can fetch and refresh the list of tasks
+const apiUrl = "http://localhost:5000/tasks"
+
+//Make POST request
+fetch(apiUrl)
+method: 'POST', // Specify the request method
+headers: {
+    'Content-Type': 'application/json'
+}
+
 }
 
 // Implement functions to fetch tasks, mark tasks as completed, and delete tasks
